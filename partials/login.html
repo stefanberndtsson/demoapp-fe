@@ -1,0 +1,9 @@
+<form ng-submit="login()">
+  <div class="control-group span3">
+    <label>Username</label>
+    <input type="text" ng-model="form.username"></input>
+    <label>Password</label>
+    <input type="password" ng-model="form.password"></input>
+    <button class="btn" ng-disabled="!form.username && !form.password">Login</button>
+  </div>
+</form>

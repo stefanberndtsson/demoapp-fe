@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="user in users">
+      <td>{{user.name}}</td>
+      <td>{{user.username}}</td>
+      <td><button class="btn" ng-click="edit(user)">Edit</button></td>
+      <td><button class="btn" ng-click="chpwd(user)">Change password</button></td>
+    </tr>
+  </tbody>
+</table>

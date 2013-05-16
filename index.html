@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="Notey" ng-controller="AppCtrl">
+  <head>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-resource.min.js"></script>
+    <script src="js/angular-cookies.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="app/notey.js"></script>
+    <script src="app/note.js"></script>
+    <script src="app/user.js"></script>
+    <script src="app/login.js"></script>
+    <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css"></link>
+    <link href="/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"></link>
+    <style>
+      .selected { border-color: red !important; }
+      .button-master {
+        position: relative;
+      }
+      .outside-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 18em;
+      }
+    </style>
+    <title>{{pageTitle}}</title>
+  </head>
+  <body>
+    <notey-navbar brand="{{pageTitle}}">
+      <notey-register ng-hide="loggedIn"></notey-register>
+      <notey-logout ng-show="loggedIn"></notey-logout>
+      <li ng-show="loggedIn"><a href="#">Logged in as {{loggedIn.name}}</a></li>
+    </notey-navbar>
+    <ng-view></ng-view>
+  </body>
+</html>

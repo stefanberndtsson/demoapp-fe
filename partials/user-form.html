@@ -1,0 +1,14 @@
+<form ng-submit="saveForm()">
+  <div class="control-group">
+    <label>Name</label>
+    <input type="text" ng-model="form.name"></input>
+    <label>Username</label>
+    <input type="text" ng-model="form.username"></input>
+    <label>Password</label>
+    <input type="password" ng-model="form.password"></input>
+    <label>Verify Password</label>
+    <input type="password" ng-model="form.password_verify"></input>
+    <button class="btn" ng-disabled="!formValid()">Save</button>
+    <button class="btn" ng-click="cancel()">Cancel</button>
+  </div>
+</form>

@@ -1,0 +1,13 @@
+<div class="row-fluid">
+  <div class="note well well-small span12 button-master"
+       ng-class="{selected: selectedNotes[note.id]}"
+       ng-mouseenter="enter()" ng-mouseleave="leave()" ng-click="click($event)">
+    <div class="outside-right">
+      <button class="btn pull-right" ng-show="hovered" ng-click="edit(note)">Edit</button>
+      <button class="btn pull-right" ng-show="hovered" ng-click="destroy(note, true)">Archive</button>
+      <button class="btn pull-right" ng-show="hovered" ng-click="destroy(note, false)">Delete</button>
+    </div>
+    <h4 class="note-title">{{note.title}}</h4>
+    <div class="note-body">{{note.body}}</div>
+  </div>
+</div>
