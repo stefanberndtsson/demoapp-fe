@@ -9,12 +9,26 @@ notey.factory('Note', function($resource, $http, $cookies) {
 
 notey.controller('NoteCtrl', function($scope, $rootScope, Note, Login) {
     console.log("NoteCtrl");
+
+    $scope.noteView = "active";
+
+    $scope.setNoteView = function(newView) {
+	$scope.noteView = newView;
+	$scope.fetch($rootScope.loggedIn);
+	return false;
+    }
+
     Login.whoami(function(user) {
 	$rootScope.loggedIn = user;
 	$scope.fetch(user);
     });
     $scope.fetch = function(user) {
-	Note.query({user_id: user ? user.id : 0},
+	var queryData = {
+	    user_id: user ? user.id : 0
+	}
+	if($scope.noteView == "deleted") { queryData.deleted = true }
+	if($scope.noteView == "archived") { queryData.archived = true }
+	Note.query(queryData,
 		   function(data) {
 		       $scope.notes = data;
 		   });

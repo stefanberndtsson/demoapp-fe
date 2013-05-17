@@ -30,7 +30,6 @@
     <notey-navbar brand="{{pageTitle}}">
       <notey-register ng-hide="loggedIn"></notey-register>
       <notey-logout ng-show="loggedIn"></notey-logout>
-      <li ng-show="loggedIn"><a href="#">Logged in as {{loggedIn.name}}</a></li>
     </notey-navbar>
     <ng-view></ng-view>
   </body>

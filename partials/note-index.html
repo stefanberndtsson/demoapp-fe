@@ -3,6 +3,19 @@
 	<notey-form></notey-form>
 	<div class="span6">
 	  <div class="container-fluid">
+	    <div class="row-fluid">
+	      <ul class="nav nav-pills">
+		<li ng-class="{active: noteView == 'active'}" ng-click="setNoteView('active')">
+		  <a href="">Active</a>
+		</li>
+		<li ng-class="{active: noteView == 'archived'}" ng-click="setNoteView('archived')">
+		  <a href="">Archived</a>
+		</li>
+		<li ng-class="{active: noteView == 'deleted'}" ng-click="setNoteView('deleted')">
+		  <a href="">Deleted</a>
+		</li>
+	      </ul>
+	    </div>
 	    <notey-note-list></notey-note-list>
 	  </div>
 	</div>

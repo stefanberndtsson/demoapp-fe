@@ -4,8 +4,8 @@
        ng-mouseenter="enter()" ng-mouseleave="leave()" ng-click="click($event)">
     <div class="outside-right">
       <button class="btn pull-right" ng-show="hovered" ng-click="edit(note)">Edit</button>
-      <button class="btn pull-right" ng-show="hovered" ng-click="destroy(note, true)">Archive</button>
-      <button class="btn pull-right" ng-show="hovered" ng-click="destroy(note, false)">Delete</button>
+      <button class="btn pull-right" ng-show="hovered && !note.archived_at && !note.deleted_at" ng-click="destroy(note, true)">Archive</button>
+      <button class="btn pull-right" ng-show="hovered && !note.deleted_at" ng-click="destroy(note, false)">Delete</button>
     </div>
     <h4 class="note-title">{{note.title}}</h4>
     <div class="note-body">{{note.body}}</div>
