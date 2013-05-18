@@ -9,7 +9,3 @@ Requirements
 3. Demo-App Post-IT Backend (node.js) (see one of my other repositories)
 4. Ruby if running the included server.rb, otherwise any webserver should do
 
-TODO
-----
-
-Delete and archive
